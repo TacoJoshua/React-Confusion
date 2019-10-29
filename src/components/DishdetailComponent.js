@@ -36,7 +36,7 @@ class DishDetail extends Component{
                         <ul className='list-unstyled'>
                             <li key={comments.id}>
                                 <p>{comments.comment}</p>
-                                <p> -- {comments.author}, &nbsp; {comments.date} </p>
+                                <p> -- {comments.author}, &nbsp; {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comments.date)))} </p>
                             </li>
                         </ul>
                 );
@@ -59,9 +59,11 @@ class DishDetail extends Component{
         const {dish} = this.props;
         if(dish) {
             return (
+            <div className="container">
             <div className="row">
                 {this.renderDish(this.props.dish)}
                 {this.renderComments(this.props.dish)}
+            </div>
             </div>
             );
         }
