@@ -16,7 +16,7 @@ import {
   Label
 } from "reactstrap";
 import { Link } from "react-router-dom";
-import { LocalForm, FormGroup, Control, Errors } from "react-redux-form";
+import { LocalForm, Control, Errors } from "react-redux-form";
 
 function RenderDish({ dish }) {
   if (dish) {
